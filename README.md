@@ -25,3 +25,4 @@ Drag and drop images to qb-inventory/html/images
 - qb-core - https://github.com/qbcore-framework/qb-core
 - qb-target - https://github.com/qbcore-framework/qb-target
 - qb-menu - https://github.com/qbcore-framework/qb-menu
+- qb-phone - https://github.com/qbcore-framework/qb-phone
