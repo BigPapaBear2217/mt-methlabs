@@ -28,6 +28,22 @@ CreateThread(function()
         },
         distance = 1.5
     })
+        
+    exports['qb-target']:AddBoxZone("MethLabsKeyBox", Config.PackageLoc, 1.5, 1.5, {
+        name="MethLabsKeyBox",
+        heading=0,
+        debugpoly = false,
+    }, {
+        options = {
+            {
+                event = "mt-methlabs:client:AbrirCaixa",
+                icon = "fas fa-box",
+                label = "Search Boxes",
+                item = "meth_jobrecive",
+            },
+        },
+        distance = 1.5
+    })
 end)
 
 RegisterNetEvent('mt-methlabs:client:PedirMissao', function()
@@ -56,7 +72,7 @@ RegisterNetEvent('mt-methlabs:client:PedirMissao', function()
         Wait(5000)
 
         SpawnGuards()
-        ExportBoxTarget()
+        TriggerServerEvent('QBCore:Server:AddItem', "meth_jobrecive", 1)
     end)
 end)
 
@@ -129,25 +145,6 @@ RegisterNetEvent('mt-methlabs:client:AbrirCaixa', function()
         TriggerServerEvent('mt-methlabs:server:DarChaves')
     end)
 end)
-
-function ExportBoxTarget()
-    TriggerServerEvent('QBCore:Server:AddItem', "meth_jobrecive", 1)
-    exports['qb-target']:AddBoxZone("MethLabsKeyBox", Config.PackageLoc, 1.5, 1.5, {
-        name="MethLabsKeyBox",
-        heading=0,
-        debugpoly = false,
-    }, {
-        options = {
-            {
-                event = "mt-methlabs:client:AbrirCaixa",
-                icon = "fas fa-box",
-                label = "Search Boxes",
-                item = "meth_jobrecive",
-            },
-        },
-        distance = 1.5
-    })
-end
 
 CreateThread(function()
     RequestModel(`a_m_m_indian_01`)
