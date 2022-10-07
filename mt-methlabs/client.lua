@@ -32,7 +32,7 @@ CreateThread(function()
     exports['qb-target']:AddBoxZone("MethLabsKeyBox", Config.PackageLoc, 1.5, 1.5, {
         name="MethLabsKeyBox",
         heading=0,
-        debugpoly = false,
+        debugpoly = true,
     }, {
         options = {
             {
@@ -72,7 +72,7 @@ RegisterNetEvent('mt-methlabs:client:PedirMissao', function()
         Wait(5000)
 
         SpawnGuards()
-        TriggerServerEvent('QBCore:Server:AddItem', "meth_jobrecive", 1)
+        TriggerServerEvent('mt-methlabs:server:primeiroitem')
     end)
 end)
 

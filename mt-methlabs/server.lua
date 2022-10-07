@@ -94,7 +94,6 @@ RegisterNetEvent('mt-methlabs:server:EmpacotarMeta', function()
     local meth_epmty_baggies = Player.Functions.GetItemByName('meth_epmty_baggies')
 
     if meth ~= nil and meth_epmty_baggies ~= nil then
-
         if meth.amount >= 5 and meth_epmty_baggies.amount >= 10 then
 
             Player.Functions.RemoveItem('meth', 5)
@@ -103,5 +102,15 @@ RegisterNetEvent('mt-methlabs:server:EmpacotarMeta', function()
             Player.Functions.AddItem('meth_baggies', 10)
             TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['meth_baggies'], "add")
         end
+    else
+        QBCore.Functions.Notify('TextHere', 'error', 7500)
     end
+end)
+
+RegisterNetEvent('mt-methlabs:server:primeiroitem', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+
+    Player.Functions.AddItem('meth_jobrecive', 1)
+    TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['meth_jobrecive'], "add")
 end)
